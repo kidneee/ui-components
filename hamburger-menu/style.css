@@ -8,12 +8,13 @@ body {
 
 h1 {
   display: inline;
-  font-size: inherit;
   margin: 0;
   font-weight: normal;
+  font-size: inherit;
+  line-height: 1;
+
   margin-block-start: 0;
-    margin-block-end: 0;
-    line-height: 1;
+  margin-block-end: 0;
 }
 
 ul {
@@ -23,8 +24,8 @@ ul {
 }
 
 a {
+  color: #000000;
   text-decoration: none;
-  color: #000;
 }
 
 /* カスタムレイアウト */
@@ -33,12 +34,12 @@ a {
 }
 
 .header__inner {
-  position: relative;
-  padding-top: 16px;
-  padding-bottom: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .header__title {
@@ -52,6 +53,7 @@ a {
 
 .g-nav__list {
   display: flex;
+
   gap: 20px;
 }
 
@@ -62,25 +64,26 @@ a {
   }
 
   .g-nav {
-    padding-right: 0;
-    width: 100%;
-    height: 100vh;
     position: fixed;
-    background-color: rgb(0 0 0 / 0.2);
-    z-index: 10;
     top: 0;
     left: -100%;
-    transition: left 0.3s ease;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    padding-right: 0;
+    background-color: rgb(0 0 0 / .2);
+    transition: left .3s ease;
   }
 
   .g-nav__list {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+
+    gap: 20px;
   }
 
   #drawerMenu.open .g-nav {
@@ -89,31 +92,28 @@ a {
 
   .hamburger-menu {
     position: absolute;
-    width: 24px;
     top: 29.5px;
     right: 16px;
     z-index: 10;
-  }
-
-  .hamburger-menu__line,
-  .hamburger-menu__line::before,
-  .hamburger-menu__line::after {
-    position: absolute;
     width: 24px;
-    right: 0;
-    background-color: #333;
-    transition: all 0.3s ease;
   }
 
-  .hamburger-menu__line::before,
-  .hamburger-menu__line::after {
-    content: '';
+  .hamburger-menu__line, .hamburger-menu__line::before, .hamburger-menu__line::after {
+    position: absolute;
+    right: 0;
+    width: 24px;
+    background-color: #333333;
+    transition: all .3s ease;
+  }
+
+  .hamburger-menu__line::before, .hamburger-menu__line::after {
     height: 2px;
+    content: "";
   }
 
   .hamburger-menu__line {
+    transform: scaleY(.5);
     height: 2px;
-    transform: scaleY(0.5);
   }
 
   .hamburger-menu__line::before {
