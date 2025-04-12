@@ -27,3 +27,36 @@ a {
   color: #000000;
   text-decoration: none;
 }
+
+/* カスタムレイアウト */
+.modal {
+  display: none;
+}
+
+.modal.is-active {
+  display: block;
+}
+
+.modal__overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .4);
+
+  inset: 0;
+}
+
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 8px;
+  background: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .modal__content {
+    max-width: 300px;
+  }
+}
