@@ -1,9 +1,11 @@
-//「モーダルを開く」ボタンを押したとき
+const modal = document.getElementById('modal');
+
 document.getElementById('openModalBtn').addEventListener('click', () => {
-  document.getElementById('modal').classList.add('is-active');
+  modal.classList.add('is-active');
+  modal.setAttribute('aria-hidden', 'false');
 });
 
-//「閉じる」ボタンを押したとき
 document.getElementById('closeModalBtn').addEventListener('click', () => {
-  document.getElementById('modal').classList.remove('is-active');
+  modal.classList.remove('is-active');
+  modal.setAttribute('aria-hidden', 'true');
 });
