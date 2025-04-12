@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tab Switching</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="./script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Tab Switching</h1>
+  </header>
+
+  <main class="main">
+    <h2>ログイン / 会員登録</h2>
+
+    <div class="tabs">
+      <ul class="tab-list">
+        <li class="tab-item active" tabindex="0">タブ1</li>
+        <li class="tab-item" tabindex="0">タブ2</li>
+        <li class="tab-item" tabindex="0">タブ3</li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-panel active">
+          <h2>タブ1の内容</h2>
+          <p>ここはタブ1の内容が入ります</p>
+        </div>
+        <div class="tab-panel">
+          <h2>タブ2の内容</h2>
+          <p>ここはタブ2の内容が入ります</p>
+        </div>
+        <div class="tab-panel">
+          <h2>タブ3の内容</h2>
+          <p>ここはタブ3の内容が入ります</p>
+        </div>
+      </div>
+    </div><!-- /.tabs -->
+  </main>
+</body>
+</html>
