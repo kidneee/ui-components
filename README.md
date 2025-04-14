@@ -30,3 +30,4 @@ open index.html  # またはブラウザで開く
 
 ## 参考サイト
 [【JavaScript】タブ切り替え徹底解説](https://zenn.dev/928sekine/articles/16b2a8faf6380c)
+[addEventListenerを使用する時の注意点とエラーの解決方法](https://global-axis.jp/blog/js_addeventlistener/)
