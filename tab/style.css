@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/* リセット */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  display: inline;
+  margin: 0;
+  font-weight: normal;
+  font-size: inherit;
+  line-height: 1;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* カスタムレイアウト */
+.tab-list,
+.tab-content {
+  display: flex;
+}
+.tab-list {
+  width: 100vw;
+}
+
+.tab-item {
+  cursor: pointer;
+}
+
+.tab-item.active {
+border-bottom: 1px solid #333;
+}
+
+.tab-content,
+.tab-panel {
+  /* border: 1px solid #333; */
+  border-radius: 8px;
+  width: 100vw;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+  /* background-color: rgb(252 222 222 / .5); */
+}
