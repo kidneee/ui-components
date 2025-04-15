@@ -60,12 +60,15 @@ button {
 }
 
 .faq__item-content {
-  display: none;
+  height: 0;
+  transition: 0.3s ease;
+  overflow: hidden;
+  padding-left: 16px;
 }
 
 .faq__item-content.is-active {
-  display: block;
-  height: 96px;
+  height: auto;
+  padding: 16px;
 }
 
 .faq__item-header .arrow {
