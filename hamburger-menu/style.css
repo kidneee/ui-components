@@ -1,143 +1,265 @@
 @charset "utf-8";
 
-/* リセット */
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-h1 {
-  display: inline;
-  margin: 0;
-  font-weight: normal;
-  font-size: inherit;
-  line-height: 1;
-
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
-ul {
-  list-style: none;
+h1,img {
+  display: block;
   margin: 0;
   padding: 0;
+  font-size: 0;
 }
 
-a {
-  color: #000000;
-  text-decoration: none;
+
+
+.pc-only {
+  display: none;
+}
+.sp-only {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .pc-only {
+    display: block;
+  }
+  .sp-only {
+    display: none;
+  }
 }
 
 /* カスタムレイアウト */
-.header {
-  height: 60px;
+.l-header {
+  width: 100%;
+  height: 160px;
+}
+@media screen and (min-width: 768px) {
+  .l-header {
+    height: 80px;
+    background-color: #e48484;
+  }
 }
 
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.l-header__inner {
   position: relative;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .l-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* max-width: 1440px; */
+    height: 100%;
+    padding-inline: 11.11vw;
+  }
 }
 
-.header__title {
-  padding-left: 16px;
-  font-size: 2rem;
+.l-header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 160px;
+  padding-inline: 16px;
+  background-color: #e48484;
+}
+@media screen and (min-width: 768px) {
+  .l-header__wrapper {
+    justify-content: flex-start;
+    width: fit-content;
+    height: 100%;
+    padding-inline: 0;
+    flex-shrink: 0;
+  }
+}
+
+.l-header__link {
+  display: block;
+  width: 100%;
+}
+
+.l-header__logo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
+/*-------------------------
+  ハンバガーメニューアイコン
+-------------------------*/
+.hamburger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+@media screen and (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+.hamburger-menu__line,
+.hamburger-menu__line::before,
+.hamburger-menu__line::after {
+  width: 45px;
+  height: 3px;
+  background-color: #e48484;
+}
+
+.hamburger-menu__line {
+  position: relative;
+}
+
+.hamburger-menu__line::before,
+.hamburger-menu__line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  content: '';
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu__line::before {
+  top: -10px;
+}
+
+.hamburger-menu__line::after {
+  top: 10px;
+}
+
+/* オープン時 */
+.open .hamburger-menu__line {
+  background-color: transparent;
+}
+
+.open .hamburger-menu__line::before,
+.open .hamburger-menu__line::after {
+  top: 0;
+}
+
+.open .hamburger-menu__line::before {
+  transform: rotate(315deg);
+}
+
+.open .hamburger-menu__line::after {
+  transform: rotate(-315deg);
+}
+
+/*-------------------------
+  ドロワーメニュー本体
+-------------------------*/
+.drawer-menu {
+  position: fixed;
+  right: -100%;
+  top: 160px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 160px);
+  background-color: #e3dede;
+  transition: 0.3s ease;
+  z-index: 200;
+}
+@media screen and (min-width: 768px) {
+  .drawer-menu {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: fit-content;
+    height: 100%;
+    background-color: transparent;
+    flex-shrink: 0;
+  }
+}
+
+.drawer-menu.open {
+  right: 0;
+}
+.drawer-menu__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 8.28vh, 80px);
+}
+@media screen and (min-width: 768px) {
+  .drawer-menu__content {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: clamp(16px, 2.78vw, 40px);
+    flex-shrink: 0;
+    height: 100%;
+  }
 }
 
 .g-nav {
-  padding-right: 16px;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .g-nav__list {
   display: flex;
-
-  gap: 20px;
+  flex-direction: column;
+  gap: clamp(16px, 4.14vh, 40px);
+}
+@media screen and (min-width: 768px) {
+  .g-nav__list {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(16px, 2.78vw, 40px);
+    height: 100%;
+  }
 }
 
-/* ハンバガーメニュー */
-@media screen and (max-width: 768px) {
-  .header__title {
-    font-size: 1.5rem;
+.g-nav__link {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+@media screen and (min-width: 768px) {
+  .g-nav__link {
+    font-size: clamp(0.75rem, 1.11vw, 1rem);
+    font-weight: 400;
   }
-
-  .g-nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    z-index: 10;
-    width: 100%;
-    height: 100vh;
-    padding-right: 0;
-    background-color: rgb(0 0 0 / .2);
-    transition: left .3s ease;
+}
+/*-------------------------
+  お問い合わせボタン
+-------------------------*/
+.g-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 190px;
+  padding-block: 16px;
+  background-color: #e48484;
+}
+@media screen and (min-width: 768px) {
+  .g-cta {
+    width: 120px;
+    height: 100%;
   }
+}
 
-  .g-nav__list {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-
-    gap: 20px;
-  }
-
-  #drawerMenu.open .g-nav {
-    left: 0;
-  }
-
-  .hamburger-menu {
-    position: absolute;
-    top: 29.5px;
-    right: 16px;
-    z-index: 10;
-    width: 24px;
-  }
-
-  .hamburger-menu__line, .hamburger-menu__line::before, .hamburger-menu__line::after {
-    position: absolute;
-    right: 0;
-    width: 24px;
-    background-color: #333333;
-    transition: all .3s ease;
-  }
-
-  .hamburger-menu__line::before, .hamburger-menu__line::after {
-    height: 2px;
-    content: "";
-  }
-
-  .hamburger-menu__line {
-    transform: scaleY(.5);
-    height: 2px;
-  }
-
-  .hamburger-menu__line::before {
-    top: -8px;
-  }
-
-  .hamburger-menu__line::after {
-    top: 8px;
-  }
-
-  #drawerMenu.open .g-nav {
-    display: block;
-  }
-
-  #drawerMenu.open .hamburger-menu__line {
-    background-color: transparent;
-  }
-
-  #drawerMenu.open .hamburger-menu__line::before {
-    top: 0;
-    transform: rotate(315deg);
-  }
-  #drawerMenu.open .hamburger-menu__line::after {
-    top: 0;
-    transform: rotate(-315deg);
+.g-cta__button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .g-cta__button {
+    font-size: clamp(0.75rem, 1.11vw, 1rem);
+    font-weight: 400;
   }
 }

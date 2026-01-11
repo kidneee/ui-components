@@ -6,29 +6,56 @@
   <title>Hamburger Menu</title>
   <link rel="stylesheet" href="style.css" />
   <script type="module" src="script.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header class="header">
-    <div class="header__inner">
-      <h1 class="header__title">Hamburger Menu</h1>
-      <!-- ドロワーメニュー -->
-      <div id="drawerMenu" class="hamburger-menu__wrapper">
-        <nav class="g-nav">
-          <ul class="g-nav__list">
-            <li class="g-nav__item"><a href="#" class="g-nav__link">メニュー</a></li>
-            <li class="g-nav__item"><a href="#" class="g-nav__link">メニュー</a></li>
-            <li class="g-nav__item"><a href="#" class="g-nav__link">メニュー</a></li>
-            <li class="g-nav__item"><a href="#" class="g-nav__link">メニュー</a></li>
-            <li class="g-nav__item"><a href="#" class="g-nav__link">メニュー</a></li>
-          </ul>
-        </nav>
-        <!-- ハンバガーメニュー -->
-        <div id="hamburgerMenu" class="hamburger-menu">
+  <!-- Header -->
+  <header class="l-header">
+    <div class="l-header__inner">
+      <div class="l-header__wrapper">
+        <h1 class="l-header__title">
+            <a href="./" class="l-header__link">
+              <img src="logo.png"  alt="ポートフォリオサイト" class="l-header__logo">
+            </a>
+          </h1>
+        <!-- ハンバガーメニューアイコン -->
+        <button id="hamburgerMenu" class="hamburger-menu" aria-label="メニュー" aria-expanded="false">
           <span class="hamburger-menu__line"></span>
-        </div><!-- /.hamburger-menu -->
+        </button><!-- /.hamburger-menu -->
+      </div><!-- /.l-header__wrapper -->
+      <!-- ドロワーメニュー本体 -->
+      <div id="drawerMenu" class="drawer-menu">
+        <div class="drawer-menu__content">
+          <nav class="g-nav">
+            <ul class="g-nav__list">
+              <li class="g-nav__item">
+                <a href="./" class="g-nav__link">ホーム</a>
+              </li>
+              <li class="g-nav__item">
+                <a href="#introduction" class="g-nav__link">自己紹介</a>
+              </li>
+              <li class="g-nav__item">
+                <a href="#works" class="g-nav__link">制作実績</a>
+              </li>
+              <li class="g-nav__item">
+                <a href="#skills" class="g-nav__link">スキル</a>
+              </li>
+              <li class="g-nav__item">
+                <a href="#faq" class="g-nav__link">よくある質問</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- お問い合わせボタン -->
+          <div class="g-cta">
+            <a href="#contact" class="g-cta__button">お問い合わせ</a>
+          </div>
+        </div><!-- /.drawer-menu__content -->
       </div><!-- /#drawerMenu -->
-    </div><!-- /.header__inner -->
+    </div><!-- /.l-header__inner -->
   </header>
 
 </body>
