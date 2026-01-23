@@ -21,6 +21,101 @@
   <script type="module" src="./script.js"></script>
 </head>
 <body>
-  
+  <header class="l-header">
+    <div class="l-header__inner">
+      <h1 class="l-header__title">
+        <a href="./" class="l-header__link">JS UI Parts Library</a>
+      </h1>
+      <p class="l-header__desc">JavaScript UI components for portfolio</p>
+    </div><!-- /.l-header__inner -->
+  </header>
+
+  <div class="layout">
+    <!-- Main Content -->
+    <main class="content">
+      <div class="components">
+        <!-- Hamburger Menu -->
+        <section id="hamburger" class="component-card">
+          <header class="component-card__header">
+            <h2 class="component-card__title">Hamburger Menu</h2>
+            <div class="component-card__tags">
+              <span class="tag">Vanilla JS</span>
+              <span class="tag">Accessible</span>
+            </div>
+          </header>
+          <div class="component-card__preview">
+            <div class="c-header">
+              <div class="c-header__inner">
+                <div class="c-header__top">
+                  <h2 class="c-header__title">
+                <a href="./" class="c-header__link">Hamburger Menu</a>
+              </h2>
+                  <!-- Hamburger Menu Icon -->
+                  <button id="hamburgerMenu" class="hamburger-menu" aria-label="メニュー" aria-expanded="false">
+                    <span lang="en" class="hamburger-menu__line"></span>
+                  </button><!-- /.hamburger-menu -->
+                </div><!-- /.c-header__top -->
+                <!-- Drawer Menu -->
+                <div id="drawerMenu" class="drawer-menu">
+                  <div class="drawer-menu__content">
+                    <nav class="c-header__nav">
+                      <span lang="en" class="drawer-menu__label">Menu</span>
+                      <ul class="c-header__nav-list">
+                        <li class="c-header__nav-item">
+                          <a href="./" class="c-header__nav-link">Home</a>
+                        </li>
+                        <li class="c-header__nav-item">
+                          <a href="#introduction" class="c-header__nav-link">About</a>
+                        </li>
+                        <li class="c-header__nav-item">
+                          <a href="#works" class="c-header__nav-link">Works</a>
+                        </li>
+                        <li class="c-header__nav-item">
+                          <a href="#skills" class="c-header__nav-link">Services</a>
+                        </li>
+                        <li class="c-header__nav-item">
+                          <a href="#faq" class="c-header__nav-link">Blog</a>
+                        </li>
+                      </ul>
+                    </nav>
+                    <!-- お問い合わせボタン -->
+                    <div class="c-header__cta">
+                      <a href="#contact" class="c-header__cta-button">Contact</a>
+                    </div>
+                  </div><!-- /.drawer-menu__content -->
+                </div><!-- /#drawerMenu -->
+              </div><!-- /.c-header__inner -->
+            </div>
+          </div><!-- /.component-card__preview -->
+        </section>
+      </div><!-- /.components -->
+    </main>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <nav class="sidebar__nav">
+        <h2>Parts Index</h2>
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a href="#hamburger" class="sidebar__link">Hamburger Menu</a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#introduction" class="sidebar__link">自己紹介</a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#works" class="sidebar__link">制作実績</a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#skills" class="sidebar__link">スキル</a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#faq" class="sidebar__link">よくある質問</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+
 </body>
 </html>
